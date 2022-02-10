@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+    background-image: url(assets/Background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.95;
+}
+
+.center-full{
+    width: 700px; 
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.p-card{
+background-color: #252525;
+color: #fff;
+}
+
+.text-center{
+    text-align: center;
+}
