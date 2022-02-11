@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BackendApiApplication<backend-api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.backend.crm.backendapi.BackendApiApplication",
+            "projectName": "backend-api",
+            "args": ""
+        }
+    ]
+}
