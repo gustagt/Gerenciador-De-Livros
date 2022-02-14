@@ -9,6 +9,16 @@
             "mainClass": "com.backend.crm.backendapi.BackendApiApplication",
             "projectName": "backend-api",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-BackendapiApplication<backendapi>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.backend.crm.backendapi.BackendapiApplication",
+            "projectName": "backendapi",
+            "args": ""
         }
     ]
 }
