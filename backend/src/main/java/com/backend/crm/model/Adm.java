@@ -19,8 +19,6 @@ public class Adm {
     @Column(nullable = false)
     private String senha;
 
-    
-
     public long getId() {
         return this.id;
     }

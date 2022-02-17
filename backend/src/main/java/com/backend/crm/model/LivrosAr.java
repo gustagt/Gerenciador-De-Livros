@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class LivrosAr {
@@ -17,19 +18,25 @@ public class LivrosAr {
     
     @Column(nullable = false)
     private String nomeLivro;
-
     
     private String detalhes;
     
     @Column(nullable = false)
-    private Date dataCadastro;
+    private Date dataCadastro ;
     
     @Column(nullable = false)
     private String autor;
     
-    @Column(nullable = false)
-    private long idCriador;
+    @ManyToOne
+    private Cliente cliente;
 
+    public Cliente getCliente() {
+        return this.cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
     public long getIdLivro() {
         return this.idLivro;
@@ -71,12 +78,5 @@ public class LivrosAr {
         this.autor = autor;
     }
 
-    public long getIdCriador() {
-        return this.idCriador;
-    }
-
-    public void setIdCriador(long idCriador) {
-        this.idCriador = idCriador;
-    }
 
 }

@@ -1,10 +1,13 @@
 package com.backend.crm.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Cliente {
@@ -19,7 +22,18 @@ public class Cliente {
     @Column(nullable = false)
     private String senha;
 
+    @OneToMany
+    private List<LivrosAr> livrosCliente;
 
+
+    public List<LivrosAr> getLivrosCliente() {
+        return this.livrosCliente;
+    }
+
+    public void setLivrosCliente(List<LivrosAr> livrosCliente) {
+        this.livrosCliente = livrosCliente;
+    }
+ 
     public long getId() {
         return this.id;
     }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.backend.crm.model.LivrosAr;
 import com.backend.crm.repositorio.LivrosRepositorio;
+import com.backend.crm.servico.ServicoLivro;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,10 @@ public class LivrosControle {
     @Autowired
     private LivrosRepositorio livrosRepositorio;
 
+    @Autowired
+    private ServicoLivro servicoLivro;
+  
+
     @GetMapping
     public List<LivrosAr> listar(){
         return livrosRepositorio.findAll();
@@ -28,9 +33,14 @@ public class LivrosControle {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)    
-    public LivrosAr adicionar(@RequestBody LivrosAr livro){
-        return livrosRepositorio.save(livro);
+    public String adicionar(@RequestBody LivrosAr livro) throws Exception{
+
+        servicoLivro.salvarLivro(livro);
+
+        return "sucesso";
     }
+
+
 
     
 }
