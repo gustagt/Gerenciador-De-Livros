@@ -1,48 +1,43 @@
 package com.backend.crm.model;
 
-import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class LivrosAr {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idLivro;
+    private Integer idLivro;
     
     @Column(nullable = false)
     private String nomeLivro;
     
     private String detalhes;
     
-    @Column(nullable = false)
-    private Date dataCadastro ;
+    private String dataCadastro ;
     
     @Column(nullable = false)
     private String autor;
     
-    @ManyToOne
-    private Cliente cliente;
+    private Integer idCadastrante;
 
-    public Cliente getCliente() {
-        return this.cliente;
+    public Integer getIdCadastrante() {
+        return this.idCadastrante;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setIdCadastrante(Integer idCadastrante) {
+        this.idCadastrante = idCadastrante;
     }
 
-    public long getIdLivro() {
+    public Integer getIdLivro() {
         return this.idLivro;
     }
 
-    public void setIdLivro(long idLivro) {
+    public void setIdLivro(Integer idLivro) {
         this.idLivro = idLivro;
     }
 
@@ -62,11 +57,11 @@ public class LivrosAr {
         this.detalhes = detalhes;
     }
 
-    public Date getDataCadastro() {
+    public String getDataCadastro() {
         return this.dataCadastro;
     }
 
-    public void setDataCadastro(Date dataCadastro) {
+    public void setDataCadastro(String dataCadastro) {
         this.dataCadastro = dataCadastro;
     }
 

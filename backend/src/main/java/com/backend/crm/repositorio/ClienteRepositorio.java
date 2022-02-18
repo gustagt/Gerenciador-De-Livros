@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ClienteRepositorio  extends JpaRepository<Cliente, Long>{
+public interface ClienteRepositorio  extends JpaRepository<Cliente, Integer>{
 
     @Query("select a from Cliente a where a.nomeUsuario = :nomeUsuario")
     public Cliente findByNomeUsuario(String nomeUsuario);

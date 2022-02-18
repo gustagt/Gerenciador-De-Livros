@@ -14,7 +14,7 @@ public class ServicoAdm {
     private AdmRepositorio admRepositorio;
 
     
-    public Adm logAdm(String user, String senha) throws ServicoException{
+    public Adm loginAdm(String user, String senha) throws ServicoException{
 
         Adm admLogin = admRepositorio.buscarLogin(user, senha);
         return admLogin;

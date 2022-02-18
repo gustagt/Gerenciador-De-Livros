@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -14,7 +15,7 @@ public class Cliente {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
 
     @Column(nullable = false)
     private String nomeUsuario;
@@ -23,8 +24,12 @@ public class Cliente {
     private String senha;
 
     @OneToMany
+    @JoinColumn(name = "idCliente")
     private List<LivrosAr> livrosCliente;
 
+    public void addLivro(LivrosAr livro){
+        this.livrosCliente.add(livro);
+    }
 
     public List<LivrosAr> getLivrosCliente() {
         return this.livrosCliente;
@@ -34,11 +39,11 @@ public class Cliente {
         this.livrosCliente = livrosCliente;
     }
  
-    public long getId() {
+    public Integer getId() {
         return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

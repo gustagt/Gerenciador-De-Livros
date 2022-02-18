@@ -33,14 +33,14 @@ public class ClienteControle {
     @Autowired
     private ServicoCliente sCliente;
     
-    @GetMapping
+    @GetMapping("/listar")
     public List<Cliente> listar(){
         return clienteRepositorio.findAll();
     }
 
-    @PostMapping("/CadastroCliente")
+    @PostMapping("/cadastro")
     @ResponseStatus(HttpStatus.CREATED)    
-    public String adicionar(@RequestBody Cliente cliente) throws Exception{
+    public String cadastrarCliente(@RequestBody Cliente cliente) throws Exception{
         sCliente.salvarCliente(cliente);
         return "sucesso";
     }

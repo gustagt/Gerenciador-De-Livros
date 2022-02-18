@@ -40,7 +40,7 @@ public class AdmControle {
             teste="deuruim";
         }
 
-        Adm admLogin = admServico.logAdm(adm.getNomeUsuario(), adm.getSenha());
+        Adm admLogin = admServico.loginAdm(adm.getNomeUsuario(), adm.getSenha());
 
         if(admLogin==null){
             teste="Usuario não encontrado";
@@ -49,6 +49,8 @@ public class AdmControle {
             teste="sucesso";
         }
         return teste;
+
+
     }
 
     
