@@ -8,24 +8,24 @@
                 </div>
                 <div class="col-12">
                     <label for="">Usuário:</label>
-                    <input type="text" pInputText class="col-12"/>
+                    <input [(ngModel)]="requestLogin.nomeUsuario" type="text" pInputText class="col-12"/>
                 </div>
                 <div class="col-12">
                     <label for="">Senha:</label>
-                    <input type="password" pInputText class="col-12"/>
+                    <input [(ngModel)]="requestLogin.senha" type="password" pInputText class="col-12"/>
                 </div>
                 <div class="col-12">
-                    <button pButton type="button" label="Entrar" class="col-12 button-default" ></button>
+                    <button (click)="doLogin()" pButton type="button" label="Entrar" class="col-12 button-default" ></button>
                     <div class="grid">
                         <div class="field col-6">
-                            <button pButton type="button" label="Registrar-se" class="p-button-link link"></button>
+                            <button (click)="cadastrarCliente()" pButton type="button" label="Registrar-se" class="p-button-link link"></button>
                         </div>
                         <div class="field col-6 text-right">
-                            <button pButton type="button" label="Login Administrativo" class="p-button-link link"></button>
+                            <button (click)="loginAdm()" pButton type="button" label="Login Administrativo" class="p-button-link link"></button>
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
             </div>
         </p-card>

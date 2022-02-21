@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RequestLogin } from 'src/app/recursos/modelos/RequestLogin';
+import { AlertService } from 'src/app/recursos/servico/alert.service';
+import { LoginService } from 'src/app/recursos/servico/usuario.service';
 
 @Component({
   selector: 'app-login-adm',
@@ -7,9 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginAdmComponent implements OnInit {
 
-  constructor() { }
+  public requestLogin: RequestLogin;
 
-  ngOnInit(): void {
+  constructor(private loginService: LoginService,
+    private alertService: AlertService,
+    private router: Router) { }
+
+  ngOnInit(): void{
+    this.requestLogin = new RequestLogin();
+  }
+
+  public doLoginAdm(): void{
+    this.loginService.doLoginAdm(this.requestLogin).subscribe((data)=>{
+      this.requestLogin.setId(data.teste);
+      this.router.navigate(['adm/administrativo'])
+    },
+    (error) => {
+      this.alertService.error("Erro no login")
+      console.error(error);
+    });
+  }
+
+  public loginCliente(): void{
+    this.router.navigate([''])
   }
 
 }

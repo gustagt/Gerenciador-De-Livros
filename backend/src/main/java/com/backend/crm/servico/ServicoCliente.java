@@ -1,11 +1,13 @@
 package com.backend.crm.servico;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 import com.backend.crm.exceptions.CriptoExistExeception;
 import com.backend.crm.exceptions.NomeUsuarioExistExeception;
 import com.backend.crm.exceptions.ServicoException;
 import com.backend.crm.model.Cliente;
+import com.backend.crm.model.LivrosAr;
 import com.backend.crm.repositorio.ClienteRepositorio;
 import com.backend.crm.util.Util;
 
@@ -38,5 +40,10 @@ public class ServicoCliente {
 
         Cliente clienteLogin = cRepositorio.buscarLogin(user, senha);
         return clienteLogin;
+    }
+
+    public List<LivrosAr> livrosCliente(Integer id){
+        Cliente cliente = cRepositorio.findById(id).get();
+        return cliente.getLivrosCliente();
     }
 }

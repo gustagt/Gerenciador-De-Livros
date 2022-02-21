@@ -1,18 +1,21 @@
 <div class="flex justify-content-center card">
-    <div class="flex ">
+    <div class="col-5">
         <p-card>
             <h2 class="text-center">Cadastro de Usuario</h2>
             <div>
                 <div class="field col-12 md:col-12">
                     <label for="">Nome:</label>
-                    <input type="text" class="inputfield w-full">
+                    <input [(ngModel)]="requestLogin.nomeUsuario" type="text" class="inputfield w-full col-12">
                 </div>
                 <div class="field col-12 md:col-12">
-                    <label for="">Senha:</label>
-                    <input type="password" class="inputfield w-full">
+                    <label  for="">Senha:</label>
+                    <input [(ngModel)]="requestLogin.senha" type="password" class="inputfield w-full col-12">
                 </div>
                 <div class="field col-12 md:col-12">
-                    <button pButton type="button" label="Cadastrar" class="col-12 button-default"></button>
+                    <button pButton (click)="doCadastrarCliente()" type="button" label="Cadastrar" class="col-12 button-default"></button>
+                    <div class="field col-6 ">
+                      <button (click)="loginCliente()" pButton type="button" label="Logar-se" class="p-button-link link"></button>
+                    </div>
                 </div>
             </div>
         </p-card>

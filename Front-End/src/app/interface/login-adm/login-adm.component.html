@@ -8,15 +8,15 @@
                 </div>
                 <div class="col-12">
                     <label for="">Usuário:</label>
-                    <input type="text" pInputText class="col-12"/>
+                    <input [(ngModel)]="requestLogin.nomeUsuario" type="text" pInputText class="col-12"/>
                 </div>
                 <div class="col-12">
-                    <label for="">Senha:</label>
-                    <input type="password" pInputText class="col-12"/>
+                    <label  for="">Senha:</label>
+                    <input [(ngModel)]="requestLogin.senha" type="password" pInputText class="col-12"/>
                 </div>
                 <div class="col-12">
-                    <button pButton type="button" label="Entrar" class="col-12 button-default" ></button>
-                    <button pButton type="button" label="Login Cliente" class="p-button-link link"></button>
+                    <button (click)="doLoginAdm()" pButton type="button" label="Entrar" class="col-12 button-default" ></button>
+                    <button (click)="loginCliente()" pButton type="button" label="Login Cliente" class="p-button-link link"></button>
                 </div>
             </div>
         </p-card>

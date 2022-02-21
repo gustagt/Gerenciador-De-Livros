@@ -24,8 +24,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class LivrosControle {
     SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm"); 
     
-    
-
     @Autowired
     private LivrosRepositorio livrosRepositorio;
 
@@ -35,6 +33,11 @@ public class LivrosControle {
 
     @GetMapping("/listar")
     public List<LivrosAr> listar(){
+        return livrosRepositorio.findAll();
+    }
+
+    public List<LivrosAr> listarById(){
+
         return livrosRepositorio.findAll();
     }
 

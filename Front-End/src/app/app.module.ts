@@ -11,20 +11,18 @@ import { CadastroComponent } from './interface/cadastro/cadastro.component';
 import { AdminstrativoComponent } from './interface/adminstrativo/adminstrativo.component';
 import {TableModule} from 'primeng/table';
 import { ClienteComponent } from './interface/cliente/cliente.component';
-import { EditarComponent } from './interface/editar/editar.component';
 import { CadastroLivroComponent } from './interface/cadastro-livro/cadastro-livro.component';
 import { LoginAdmComponent } from './interface/login-adm/login-adm.component';
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CadastroComponent,
-    AdminstrativoComponent,
+    
     ClienteComponent,
-    EditarComponent,
     CadastroLivroComponent,
-    LoginAdmComponent
   ],
   imports: [
     BrowserModule,
@@ -33,8 +31,9 @@ import { LoginAdmComponent } from './interface/login-adm/login-adm.component';
     CardModule,
     ButtonModule,
     InputTextModule,
-    TableModule
-    
+    TableModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
